@@ -1,11 +1,13 @@
 ﻿using APBDPROJEKT.Exceptions;
 using APBDPROJEKT.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APBDPROJEKT.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class RevenueController : ControllerBase
 {
     private readonly IRevenueService _revenueService;

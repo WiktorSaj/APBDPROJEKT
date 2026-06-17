@@ -16,4 +16,8 @@ public class AppUser
     public string Password { get; set; } = string.Empty;
     [Required]
     public string Role { get; set; } = string.Empty;
+    
+    public string? RefreshToken { get; set; }
+    
+    public DateTime? RefreshTokenExpires { get; set; }
 }

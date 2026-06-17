@@ -155,14 +155,14 @@ public class RevenueDbContext : DbContext
             {
                 Id = 1,
                 Login = "appUser1",
-                Password = "password1",
+                Password = "$2a$12$1GWilMWEoqaPCXQ1kNCkf.o97C1kvE81lCw83mrP9qLFUn3t/Lkam",
                 Role = "Admin",
             },
             new AppUser
             {
                 Id = 2,
                 Login = "appUser2",
-                Password = "password2",
+                Password = "$2a$12$fhGCEtu08X2Px5C.gW8Yn.XgL5OMVRXiYk1GNQtgW2hvbdGXutLQ6",
                 Role = "User",
             }
         );

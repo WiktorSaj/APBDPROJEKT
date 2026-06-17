@@ -2,12 +2,14 @@ using APBDPROJEKT.DTOs.ClientDTOs;
 using APBDPROJEKT.Entities;
 using APBDPROJEKT.Exceptions;
 using APBDPROJEKT.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APBDPROJEKT.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ClientsController : ControllerBase
 {
     private readonly IClientService _clientService;
@@ -44,8 +46,8 @@ public class ClientsController : ControllerBase
             return  Conflict(e.Message);
         }
     }
-
     [HttpPut("individual/{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateIndividualClientAsync([FromRoute]int id, [FromBody]UpdateIndividualClientDto dto)
     {
         try
@@ -60,6 +62,7 @@ public class ClientsController : ControllerBase
     }
     
     [HttpPut("company/{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateCompanyClientAsync([FromRoute]int id, [FromBody]UpdateCompanyClientDto dto)
     {
         try
@@ -75,6 +78,7 @@ public class ClientsController : ControllerBase
 
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteClientAsync(int id)
     {
         try
