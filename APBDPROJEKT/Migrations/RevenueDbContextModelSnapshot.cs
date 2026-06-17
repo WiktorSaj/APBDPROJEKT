@@ -53,7 +53,7 @@ namespace APBDPROJEKT.Migrations
                     b.HasIndex("Login")
                         .IsUnique();
 
-                    b.ToTable("AppUsers");
+                    b.ToTable("AppUsers", (string)null);
 
                     b.HasData(
                         new
@@ -94,7 +94,7 @@ namespace APBDPROJEKT.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Clients", (string)null);
 
                     b.UseTptMappingStrategy();
                 });
@@ -138,7 +138,7 @@ namespace APBDPROJEKT.Migrations
 
                     b.HasIndex("SoftwareId");
 
-                    b.ToTable("Contracts");
+                    b.ToTable("Contracts", (string)null);
 
                     b.HasData(
                         new
@@ -195,7 +195,7 @@ namespace APBDPROJEKT.Migrations
 
                     b.HasIndex("SoftwareId");
 
-                    b.ToTable("Discounts");
+                    b.ToTable("Discounts", (string)null);
 
                     b.HasData(
                         new
@@ -239,7 +239,7 @@ namespace APBDPROJEKT.Migrations
 
                     b.HasIndex("ContractId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
 
                     b.HasData(
                         new
@@ -287,7 +287,7 @@ namespace APBDPROJEKT.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Software");
+                    b.ToTable("Software", (string)null);
 
                     b.HasData(
                         new
@@ -327,7 +327,7 @@ namespace APBDPROJEKT.Migrations
                         .IsUnique()
                         .HasFilter("[Krs] IS NOT NULL");
 
-                    b.ToTable("CompanyClients");
+                    b.ToTable("CompanyClients", (string)null);
 
                     b.HasData(
                         new
@@ -374,7 +374,7 @@ namespace APBDPROJEKT.Migrations
                         .IsUnique()
                         .HasFilter("[Pesel] IS NOT NULL");
 
-                    b.ToTable("IndividualClients");
+                    b.ToTable("IndividualClients", (string)null);
 
                     b.HasData(
                         new
